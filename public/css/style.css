@@ -1,0 +1,870 @@
+body {
+  background-color: #333333;
+  font-family: 'Source Code Pro', monospace;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button {
+  cursor: pointer;
+}
+
+#content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  margin-top: 23px;
+}
+
+#logo-img {
+  height: 100%
+}
+
+#title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 25.2px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 27px;
+  margin-bottom: 34px;
+}
+
+#landing-page {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#launch-buttons {
+  width: 287px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3.5px;
+}
+
+.launch-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12.6px;
+  line-height: 14px;
+  letter-spacing: 0.9px;
+  width: 140px;
+  height: 122px;
+  border: solid 1.5px #ff4f58;
+}
+
+.launch-button:hover {
+  border: solid 1.5px #fff;
+}
+
+.launch-icon {
+  height: 67px;
+  width: 67px;
+}
+
+.label {
+  text-align: center;
+  color: #ff4f58;
+  text-decoration: underline;
+}
+
+.launch-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.launch-label:active, .launch-button:active .launch-label {
+  color: #fff;
+}
+
+
+.meetings-label {
+  text-transform: uppercase;
+  margin: 12px auto;
+}
+
+#meetings-landing {
+  margin: 3.5px;
+  width: 287px;
+  height: 341px;
+  border: solid 1.5px #ff4f58;
+  overflow-y: scroll;
+}
+
+/* Landing page media queries */
+@media only screen and (min-width: 720px) {
+  #logo {
+    height: 72px;
+    margin-top: 40px;
+  }
+
+  #title {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  #launch-buttons {
+    width: 620px;
+    margin-bottom: 10px;
+  }
+
+  .launch-button {
+    width: 300px;
+    height: 250px;
+  }
+
+  .launch-icon {
+    height: 120px;
+    width: 120px;
+  }
+
+  .launch-label {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    margin-top: 15px;
+  }
+
+  #meetings-landing {
+    width: 620px;
+    height: 509px;
+  }
+
+  #meetings-table table {
+    width: 100%;
+  }
+}
+
+#th-time {
+  width: 69.1px;
+}
+
+#th-location {
+  width: 96.6px;
+}
+
+#th-note {
+  width: 100.9px;
+}
+
+/* Tables */
+
+table {
+  overflow: scroll;
+}
+
+thead {
+  font-size: 12.6px;
+  letter-spacing: 0.9px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+thead, tbody {
+  padding: 5px 5px;
+}
+
+#meetings-landing td {
+  line-height: 70px;
+  font-size: 11.2px;
+  letter-spacing: 0.8px;
+  text-align: left;
+}
+
+#meetings-landing tbody > tr {
+  height: 70px;
+}
+
+#ideas-landing td {
+  line-height: 35px;
+  font-size: 11.2px;
+  letter-spacing: 0.8px;
+  text-align: left;
+}
+
+#ideas-landing tr:hover p:first-child {
+  text-decoration: underline;
+}
+
+#ideas-landing tbody > tr {
+  height: 35px;
+}
+
+td > p {
+  line-height: 1.5;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #555555;
+}
+
+td:nth-child(1) {
+  padding: 5px;
+}
+
+td:nth-last-child(1) {
+  padding: 5px;
+}
+
+/* Cancel Button */
+
+#meetings-cancel {
+  width: 106px;
+  height: 26px;
+  margin: 10px;
+  background-color: #ff4f58;
+  text-transform: uppercase;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#meetings-cancel:hover {
+  border: solid 1.5px #fff;
+}
+
+#meetings-cancel:active {
+  text-decoration: underline;
+}
+
+/* Minions */
+
+#minions-landing {
+  border: solid 1.5px #ff4f58;
+  min-height: 394px;
+  width: 287px;
+}
+
+#back-button {
+  position: absolute;
+  top: 6px;
+  left: 4px;
+}
+
+#back-button img {
+  width: 25.2px;
+}
+
+.minions-label {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  margin: 9px 0px;
+}
+
+#all-minions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.minion-grid {
+  width: 61px;
+  min-height: 107.16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  margin: 5px 5px;
+}
+
+.minion-grid:hover {
+  text-decoration: underline;
+}
+
+.minion-thumbnail {
+  width: 50px;
+  margin: 5px 0px;
+}
+
+.minion-grid p {
+  cursor: pointer;
+}
+
+.x-button {
+  transform: rotate(45deg);
+  width: 12px;
+}
+
+#add-minion-button-grid {
+  align-self: center;
+}
+
+#add-minion-button {
+  width: 25px;
+}
+
+/* All Minions media queries */
+@media only screen and (min-width: 720px) {
+  #minions-landing {
+    width: 620px;
+    height: 762px;
+  }
+
+  .minion-grid {
+    width: 120px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+  }
+
+  .minion-thumbnail {
+    width: 102px;
+  }
+
+  .minions-label {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+  }
+
+  .x-button {
+    width: 20px;
+  }
+
+  #add-minion-button {
+    width: 51px;
+  }
+
+}
+
+#ideas-landing {
+  width: 287px;
+  height: 394px;
+  border: solid 2px #ff4f58;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+#ideas-landing table {
+  width: 100%;
+}
+
+#add-idea-td {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+#add-idea {
+  width: 22px;
+  height: 22px;
+}
+
+#total-money {
+  margin: 20px auto;
+  font-size: 12.6px;
+  font-weight: bold;
+  letter-spacing: 0.9px;;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#total-money p {
+  padding: 5px;
+  background-color: #ff4f58;
+}
+
+/* All Ideas media queries */
+@media only screen and (min-width: 720px) {
+  #ideas-landing {
+    width: 620px;
+    height: 762px;
+  }
+
+  #add-idea {
+    width: 32px;
+  }
+
+  #total-money {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    height: 32px;
+  }
+
+  #ideas-landing th, #ideas-landing td {
+    font-size: 16px;
+  }
+
+}
+
+#single-idea-landing {
+  width: 287px;
+  height: 394px;
+  border: solid 2.5px #ff4f58;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.idea-description {
+   margin: 5px 5px;
+  padding: 5px;
+  width: 258px;
+  height: 126px;
+  background-color: #565555;
+  border: solid 1.4px #fffefe;
+  font-family: 'Source Code Pro', monospace;
+  color: #fff;
+  font-size: 11.2px;
+  font-weight: 500;
+  line-height: 1.19;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
+.idea-income {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+
+.idea-detail {
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-idea-label {
+  font-size: 12.6px;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  margin: 6px 0px;
+  text-transform: uppercase;
+}
+
+.idea-detail-input {
+  max-width: 120px;
+  height: 35px;
+  background-color: #565555;
+  border: solid 1.4px #ffffff;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.idea-name-input {
+  width: 250px;
+  height: 35px;
+  background-color: #565555;
+  border: solid 1.4px #ffffff;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration-line: none;
+}
+
+.idea-detail-display {
+  min-width: 80px;
+  height: 35px;
+  background-color: #565555;
+  border: solid 1.4px #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.idea-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.save-button {
+  margin: 20px 0;
+  width: 52.5px;
+  height: 20px;
+  background-color: #ff4f58;
+  font-size: 12.6px;
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.save-button:hover {
+  border: solid 1.5px #fff;
+}
+
+.save-button:active {
+  text-decoration: underline;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: #565555;
+}
+
+.save-button.disabled {
+  width: 180px;
+  height: 40px;
+}
+
+.save-button:hover {
+  text-decoration: underline;
+}
+
+.save-button.disabled:hover {
+  width: 180px;
+  height: 40px;
+  text-decoration: none;
+}
+
+/* Single Idea media queries */
+@media only screen and (min-width: 720px) {
+  #single-idea-landing {
+    width: 620px;
+    height: 762px;
+    justify-content: flex-start;
+  }
+
+  .idea-description {
+    width: 514px;
+    min-height: 180px;
+  }
+
+  .single-idea-label {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+  }
+
+  .idea-detail {
+    min-width: 180px;
+  }
+
+  .idea-detail-display {
+    min-width: 120px;
+  }
+
+  .save-button {
+    font-size: 16px;
+    height: 28px;
+    width: 75px;
+  }
+
+}
+
+#single-minion-landing {
+  width: 287px;
+  height: 394px;
+  border: solid 2px #ff4f58;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.minion-description {
+  width: 259px;
+	height: 142.4px;
+	background-color: #565555;
+	border: solid 1.4px #fffefe;
+}
+
+.minion-details, .work-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 0.25px #ff4f58;
+  flex-grow: 1;
+}
+
+#work-container {
+  max-height: 180px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.work-table {
+  font-size: 11.6px;
+  letter-spacing: 0.2px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.work-table td {
+  padding: 4px 2px;
+}
+
+.work-table tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.work-table img {
+  width: 17px;
+  transform: rotate(45deg);
+}
+
+.work-table input {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #565555;
+  border: solid 1.4px #fffefe;
+  color: #fff;
+}
+
+.work-title-edit {
+  width: 52px;
+}
+
+.work-desc-edit {
+  width: 94px
+}
+
+.work-hours-edit {
+  width: 26px;
+}
+
+.work-x {
+  width: 27px;
+}
+
+.work-title {
+  width: 72px;
+}
+
+.work-desc {
+  width: 76px
+}
+
+.work-hours {
+  width: 35px;
+}
+
+.work-save {
+  width: 55px;
+}
+
+.add-work-button {
+  background-color: #ff4f58;
+  min-width: 75px;
+  min-height: 25px;
+  font-size: 11.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.add-work-button:hover {
+  border: solid 1.5px #fff;
+}
+
+.add-work-button:active {
+  text-decoration: underline;
+}
+
+.work-save-button {
+  width: 52.5px;
+  height: 19.6px;
+  background-color: #ff4f58;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-save-button:hover {
+  border: solid 1.5px #fff;
+}
+
+.work-save-button:active {
+  text-decoration: underline;
+}
+
+#minion-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52.5px;
+	height: 19.6px;
+  background-color: #ff4f58;
+	font-size: 12.6px;
+	font-weight: bold;
+	letter-spacing: 0.9px;
+  text-align: center;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.minion-description {
+  padding: 5px;
+  font-size: 11.2px;
+	font-weight: 500;
+	line-height: 1.31;
+	letter-spacing: 0.9px;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+.minion-description p {
+  padding-top: 5px;
+}
+
+.minion-edit-row {
+  padding: 5px 0px;
+}
+
+.minion-edit-label {
+  display: inline-block;
+  width: 65px;
+}
+
+.minion-edit input {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #565555;
+  border: solid 1.4px #fffefe;
+  color: #fff;
+}
+
+.minion-input-textarea {
+  width: 98%;
+  min-height: 50px;
+  margin: 4px auto;
+  background-color: #565555;
+  border: solid 1.4px #fffefe;
+  font-family: 'Source Code Pro', monospace;
+  color: #fff;
+}
+
+.minion-save-button {
+  margin: 10px 0;
+  width: 52.5px;
+  height: 19.6px;
+  background-color: #ff4f58;
+  font-size: 12.6px;
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.minion-save-button:hover {
+  border: solid 1.5px #fff;
+}
+
+.minion-save-button:active {
+  text-decoration: underline;
+}
+
+/* Single Minion media queries */
+@media only screen and (min-width: 720px) {
+  #single-minion-landing {
+    width: 620px;
+    height: 762px;
+  }
+
+  .minion-description {
+    width: 514px;
+    min-height: 240px;
+    font-size: 16px;
+  }
+
+  .minion-edit input {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #565555;
+    border: solid 1.4px #fffefe;
+    color: #fff;
+    min-width: 200px;
+  }
+
+  .minion-edit textarea {
+    min-height: 100px;
+  }
+
+  .minion-edit-label {
+    width: 100px;
+  }
+
+  .minion-details {
+    max-height: 330px;
+  }
+
+  #work-container {
+    width: 100%;
+    max-height: 450px;
+  }
+
+  .work-table {
+    width: 100%;
+  }
+
+  .work-title-edit {
+    width: 100px;
+  }
+
+  .work-desc-edit {
+    width: 150px
+  }
+
+  .work-hours-edit {
+    width: 52px;
+  }
+
+  .add-work-button {
+    font-size: 14px;
+    min-width: 100px;
+  }
+
+}
+
+.back-button {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, textarea {
+  cursor: text;
+}
