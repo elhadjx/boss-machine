@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "cross-env PORT=8000 mocha --watch",
+    "test": "cross-env PORT=8000 mocha --watch test/test.js",
     "start-dev": "webpack -w & nodemon --watch server.js --watch server/",
     "start": "nodemon --watch server.js --watch server/",
     "postinstall": "webpack"
