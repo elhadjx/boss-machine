@@ -26,7 +26,7 @@ minionsRoute.post('/', (req, res, next) => {
 
     const minion = req.body
     addToDatabase('minions', minion)
-    res.sendStatus(204)
+    res.status(201).send(minion)
 })
 
 minionsRoute.get('/:minionId', (req, res, next) => {
