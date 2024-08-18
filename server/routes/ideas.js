@@ -1,13 +1,15 @@
 const express = require('express')
 const ideasRoute = express.Router();
 
-const { getAllFromDatabase, addToDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db')
+const { getAllFromDatabase, addToDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db');
+const checkMillionDollarIdea = require('../checkMillionDollarIdea');
 
 
-ideasRoute.param('ideasId', (req, res, next, id) => {
+ideasRoute.param('ideaId', (req, res, next, id) => {
 
     const idea = getFromDatabaseById('ideas', id);
     if (idea) {
+        idea.id = id
         req.idea = idea
         next()
     } else {
@@ -21,7 +23,7 @@ ideasRoute.get('/', (req, res, next) => {
     res.send(allIdeas);
 })
 
-ideasRoute.post('/', (req, res, next) => {
+ideasRoute.post('/', checkMillionDollarIdea, (req, res, next) => {
 
     const ideaInstace = req.body
     addToDatabase('ideas', ideaInstace)
@@ -35,7 +37,7 @@ ideasRoute.get('/:ideaId', (req, res, next) => {
 ideasRoute.put('/:ideaId', (req, res, next) => {
 
     const idea = req.body
-    updateInstanceInDatabase('ideas', idea)
+    const result = updateInstanceInDatabase('ideas', idea)
     res.status(200).send(result)
 })
 

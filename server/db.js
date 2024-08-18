@@ -10,7 +10,7 @@ const createMinion = () => {
     const noun = faker.company.catchPhraseNoun();
     return `${reason} ${adj} ${noun}`;
   })
-  .join(', ') + ', too ' + faker.hacker.adjective()
+    .join(', ') + ', too ' + faker.hacker.adjective()
 
   return {
     id: `${minionIdCounter++}`,
@@ -87,7 +87,7 @@ const isValidMinion = (instance) => {
   instance.weaknesses = instance.weaknesses || '';
   instance.title = instance.title || '';
   if (typeof instance.name !== 'string' || typeof instance.weaknesses !== 'string'
-  || typeof instance.title !== 'string') {
+    || typeof instance.title !== 'string') {
     throw new Error('Minion\'s name, title, and weaknesses must be strings');
   }
   if (!isNaN(parseFloat(instance.salary)) && isFinite(instance.salary)) {

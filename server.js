@@ -11,7 +11,6 @@ module.exports = app;
 */
 const PORT = process.env.PORT || 4001;
 
-app.use(morgan('short'))
 
 // Add middleware for handling CORS requests from index.html
 app.use(cors())

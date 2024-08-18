@@ -10,7 +10,7 @@ minionsRoute.param('minionId', (req, res, next, id) => {
         req.minion = minion;
         next()
     } else {
-        res.status(404).send({ error: 'Minion not found' })
+        res.status(404).send()
     }
 
 })
@@ -39,27 +39,61 @@ minionsRoute.put('/:minionId', (req, res, next) => {
 })
 
 minionsRoute.delete('/:minionId', (req, res, next) => {
-    deleteFromDatabasebyId(req.minion.id)
-    res.sendStatus(204);
+    const deleted = deleteFromDatabasebyId('minions', req.minion.id)
+    if (deleted) {
+        res.sendStatus(204);
+    } else {
+        res.status(500).send()
+    }
 })
 
 // WORK
 
 minionsRoute.get('/:minionId/work', (req, res, next) => {
-
+    const allWork = getAllFromDatabase('work').filter((work) => { return work.minionId == req.params.minionId })
+    res.status(200).send(allWork)
 })
 
 minionsRoute.post('/:minionId/work', (req, res, next) => {
-
+    const workInstance = req.body;
+    addToDatabase('work', workInstance);
+    res.status(201).send(workInstance)
 })
 
-minionsRoute.put('/:minionId/work/:workId', (req, res, next) => {
+minionsRoute.put('/:minionId/work/:workId',
+    (req, res, next) => {
+        const workId = req.params.workId;
+        let work = getFromDatabaseById('work', workId);
+        if (work) {
+            next()
+        } else {
+            res.status(404).send({ error: 'Work not found.' })
+            return;
+        }
+    }, (req, res, next) => {
+        const workInstance = req.body;
+        if (workInstance.minionId != req.params.minionId) {
+            res.sendStatus(400)
+            return;
+        }
+        updateInstanceInDatabase('work', workInstance);
+        res.status(200).send(workInstance)
+    })
 
-})
-
-minionsRoute.delete('/:minionId/work/:workId', (req, res, next) => {
-
-})
+minionsRoute.delete('/:minionId/work/:workId',
+    (req, res, next) => {
+        const workId = req.params.workId;
+        let work = getFromDatabaseById('work', workId);
+        if (work) {
+            next()
+        } else {
+            res.status(404).send({ error: 'Work not found.' })
+            return;
+        }
+    }, (req, res, next) => {
+        deleteFromDatabasebyId('work', req.params.workId)
+        res.sendStatus(204);
+    })
 
 
 module.exports = minionsRoute
