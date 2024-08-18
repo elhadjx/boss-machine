@@ -4,7 +4,7 @@ const ideasRoute = express.Router();
 const { getAllFromDatabase, addToDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db')
 
 
-ideasRoute.param('ideasId', (res, res, next, id) => {
+ideasRoute.param('ideasId', (req, res, next, id) => {
 
     const idea = getFromDatabaseById('ideas', id);
     if (idea) {

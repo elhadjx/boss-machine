@@ -43,4 +43,23 @@ minionsRoute.delete('/:minionId', (req, res, next) => {
     res.sendStatus(204);
 })
 
+// WORK
+
+minionsRoute.get('/:minionId/work', (req, res, next) => {
+
+})
+
+minionsRoute.post('/:minionId/work', (req, res, next) => {
+
+})
+
+minionsRoute.put('/:minionId/work/:workId', (req, res, next) => {
+
+})
+
+minionsRoute.delete('/:minionId/work/:workId', (req, res, next) => {
+
+})
+
+
 module.exports = minionsRoute
