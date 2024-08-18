@@ -3,43 +3,45 @@ const ideasRoute = express.Router();
 
 const { getAllFromDatabase, addToDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db')
 
-// TODO middleware to check for existing :id for routes GET PUT DELETE
+
+ideasRoute.param('ideasId', (res, res, next, id) => {
+
+    const idea = getFromDatabaseById('ideas', id);
+    if (idea) {
+        req.idea = idea
+        next()
+    } else {
+        res.status(404).send({ error: 'Idea not found.' })
+    }
+})
 
 ideasRoute.get('/', (req, res, next) => {
-    const allMinions = getAllFromDatabase('minions')
-    res.send(allMinions);
+
+    const allIdeas = getAllFromDatabase('ideas')
+    res.send(allIdeas);
 })
 
 ideasRoute.post('/', (req, res, next) => {
-    const minionInstace = req.body
 
-    addToDatabase('minions', minionInstace)
-
-    res.status(201).send(minionInstace)
+    const ideaInstace = req.body
+    addToDatabase('ideas', ideaInstace)
+    res.status(201).send(ideaInstace)
 })
 
-ideasRoute.get('/:minionId', (req, res, next) => {
-    const { minionId } = req.params
-
-    const minion = getFromDatabaseById(minionId)
-
-    res.status(200).send(minion)
+ideasRoute.get('/:ideaId', (req, res, next) => {
+    res.status(200).send(req.idea)
 })
 
-ideasRoute.put('/:minionId', (req, res, next) => {
-    const { minionId } = req.params
-    const minion = req.body
+ideasRoute.put('/:ideaId', (req, res, next) => {
 
-    updateInstanceInDatabase('minions', minion)
-
+    const idea = req.body
+    updateInstanceInDatabase('ideas', idea)
     res.status(200).send(result)
 })
 
-ideasRoute.delete('/:minionId', (req, res, next) => {
-    const { minionId } = req.params
+ideasRoute.delete('/:ideaId', (req, res, next) => {
 
-    deleteFromDatabasebyId('minions', minionId);
-
+    deleteFromDatabasebyId('ideas', req.idea.id);
     res.sendStatus(204);
 })
 
