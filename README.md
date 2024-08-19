@@ -25,7 +25,7 @@ Boss Machine provides a RESTful API that allows you to manage minions, ideas, an
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/boss-machine.git
+   git clone https://github.com/elhadjx/boss-machine.git
    cd boss-machine
    ```
 
@@ -133,6 +133,3 @@ npm run test
 - **JavaScript**
 - **Mocha & Chai** (for testing)
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
