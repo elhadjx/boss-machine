@@ -95,8 +95,7 @@ Boss Machine provides a RESTful API that allows you to manage minions, ideas, an
 - **DELETE `/api/meetings`**
   - Deletes all meetings from the database.
 
-### Work (Bonus)
-
+### Work
 - **GET `/api/minions/:minionId/work`**
   - Retrieves an array of all work for the specified minion.
 
